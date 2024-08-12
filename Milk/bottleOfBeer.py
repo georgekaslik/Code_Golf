@@ -7,5 +7,4 @@ for x in range(99, 0, -1):
     else:
         print(f"{x} bottles of beer on the wall, {x} bottles of beer.\nTake one down and pass it around, {y} bottles of beer on the wall.\n")
 
-# Add the final verse when there are no more bottles left
 print("No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.")
