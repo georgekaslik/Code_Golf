@@ -43,24 +43,23 @@ void printList(Node* head) {
 
 int main() {
     // Creating individual nodes
-    Node* firstNode = new Node(3);
-    Node* secondNode = new Node(5);
-    Node* thirdNode = new Node(13);
-    Node* fourthNode = new Node(2);
+    Node firstNode = Node(3);
+    Node secondNode = Node(5);
+    Node thirdNode = Node(13);
+    Node fourthNode = Node(2);
 
     // Linking nodes together
-    firstNode->setNext(secondNode);
-    secondNode->setNext(thirdNode);
-    thirdNode->setNext(fourthNode);
+    firstNode.setNext(&secondNode);
+    firstNode.getNext()->setNext(&thirdNode);
+    firstNode.getNext()->getNext()->setNext(&fourthNode);
 
     // Printing linked list
-    printList(firstNode);
-
-    // Cleanup to avoid memory leaks
-    delete firstNode;
-    delete secondNode;
-    delete thirdNode;
-    delete fourthNode;
+    Node* node = &firstNode;
+    while(node != nullptr)
+    {
+        std::cout << node->getData();
+        node = node->getNext();
+    }
 
     return 0;
 }
