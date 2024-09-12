@@ -60,6 +60,5 @@ int main() {
         std::cout << node->getData();
         node = node->getNext();
     }
-
     return 0; 
 }
