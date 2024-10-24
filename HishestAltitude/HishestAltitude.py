@@ -7,4 +7,4 @@ class Solution:
             currentAltitude += i
             highestAltitude = max(highestAltitude, currentAltitude)
         
-        return highest_altitude
+        return highestAltitude
