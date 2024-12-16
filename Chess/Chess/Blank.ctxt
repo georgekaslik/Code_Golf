@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Blank
+comment0.text=\n\ Write\ a\ description\ of\ class\ Blank\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=x\ y
+comment1.target=Blank(int,\ int)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Blank\n
+numComments=2
