@@ -24,16 +24,9 @@ public class Rook extends Piece
     {
         //can the piece move to x,y?
         
-        if (pieceValue == 1 && x == xPos && y == yPos+1){
+        if ((x == xPos && y >= 0 && y < 8) || (y == yPos && x >= 0 && x < 8)){
             return true;
         }
-        
-        if (pieceValue == -1 && x == xPos && y == yPos-1){
-            return true;
-        }
-        //require a if statment for the direction its moving
-        
-        //response in boolean
         return false;
     }
 }

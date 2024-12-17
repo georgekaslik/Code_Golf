@@ -16,17 +16,12 @@ public class Bishops extends Piece
      @Override public boolean canMove(int x, int y)
     {
         //can the piece move to x,y?
-        
-        if (pieceValue == 1 && x == xPos && y == yPos+1){
+        //(xPos - x)^2 == (yPos - y)^2
+        int xDiff = (xPos - x);
+        int yDiff = (yPos - y);
+        if ((xDiff * xDiff) == (yDiff * yDiff)){
             return true;
         }
-        
-        if (pieceValue == -1 && x == xPos && y == yPos-1){
-            return true;
-        }
-        //require a if statment for the direction its moving
-        
-        //response in boolean
         return false;
     }
 }

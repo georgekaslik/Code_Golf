@@ -40,22 +40,21 @@ public class Controler
         Scanner in = new Scanner(System.in);
         
         System.out.print("Enter x,y to move: ");
-        String s = in.nextLine();
+        String s = in.nextLine(); // nextLine means enter
         if(s.equals('q'))
         {
             System.exit(0);
         }
         String[] stringSplit = s.split(",");
-        int xCurrent = Integer.parseInt(stringSplit[0]);
-        int yCurrent = Integer.parseInt(stringSplit[1]);
-        System.out.println("You entered x=" + xCurrent + " y=" + yCurrent);
+        int xCurrent = (stringSplit[0].charAt(0)) - 'A';//Integer.parseInt(stringSplit[0]);
+        int yCurrent = Integer.parseInt(stringSplit[1]) - 1;
         
         System.out.print("Enter x,y to move to: ");
         s = in.nextLine();
     
         stringSplit = s.split(",");
-        int x = Integer.parseInt(stringSplit[0]);
-        int y = Integer.parseInt(stringSplit[1]);
+        int x = (stringSplit[0].charAt(0)) - 'A';
+        int y = Integer.parseInt(stringSplit[1]) - 1;
         System.out.println("You entered x=" + x + " y=" + y);
         
         Piece piece = this.board.getPiece(xCurrent, yCurrent);

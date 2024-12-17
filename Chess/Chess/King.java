@@ -17,16 +17,15 @@ public class King extends Piece
     {
         //can the piece move to x,y?
         
-        if (pieceValue == 1 && x == xPos && y == yPos+1){
+        if ((x == xPos && (y == yPos+1 || y == yPos-1)) || //up and down
+            (y == yPos && (x == xPos+1 || x == xPos-1)) || //left and right
+            (x == xPos+1 && y == yPos+1) || //top right
+            (x == xPos-1 && y == yPos+1) || //top left
+            (x == xPos-1 && y == yPos-1) || //bottom left
+            (x == xPos+1 && y == yPos-1) //bottom right
+            ){
             return true;
         }
-        
-        if (pieceValue == -1 && x == xPos && y == yPos-1){
-            return true;
-        }
-        //require a if statment for the direction its moving
-        
-        //response in boolean
         return false;
     }
 }

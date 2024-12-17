@@ -24,16 +24,17 @@ public class Horses extends Piece
     {
         //can the piece move to x,y?
         
-        if (pieceValue == 1 && x == xPos && y == yPos+1){
+        if ((x == xPos+1 && y == yPos+2) || // up 2 right 1
+            (x == xPos-1 && y == yPos+2) || //up 2 left 1
+            (x == xPos-1 && y == yPos-2) || //down 2 left 1
+            (x == xPos+1 && y == yPos-2) ||//downe 2 right 1
+            (x == xPos+2 && y == yPos+1) || //right 2 up 1
+            (x == xPos-2 && y == yPos+1) || //left 2 up 1
+            (x == xPos-2 && y == yPos-1) || //left 2 down 1
+            (x == xPos+2 && y == yPos-1) //right 2 down 1
+            ){
             return true;
         }
-        
-        if (pieceValue == -1 && x == xPos && y == yPos-1){
-            return true;
-        }
-        //require a if statment for the direction its moving
-        
-        //response in boolean
         return false;
     }
 }
