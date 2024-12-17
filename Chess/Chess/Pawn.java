@@ -19,19 +19,19 @@ public class Pawn extends Piece
             this.pieceIcon = 0x265F;
     }
 
-    @Override public boolean canMove(int x, int y)
+    @Override public boolean canMove(int x, int y, int playersTurn)
     {
         //can the piece move to x,y?
-        
-        if (pieceValue == 1 && x == xPos && y == yPos+1){
-            return true;
+        if((playersTurn > 0 && pieceValue > 0) || (playersTurn < 0 && pieceValue < 0))
+        {
+            if (pieceValue == 1 && x == xPos && y == yPos+1){
+                return true;
+            }
+            
+            if (pieceValue == -1 && x == xPos && y == yPos-1){
+                return true;
+            }
         }
-        
-        if (pieceValue == -1 && x == xPos && y == yPos-1){
-            return true;
-        }
-        //require a if statment for the direction its moving
-        
         //response in boolean
         return false;
     }

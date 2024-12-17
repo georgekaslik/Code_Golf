@@ -43,7 +43,7 @@ public class Piece
         yPos = y;
     }
     
-    public boolean canMove(int x, int y)
+    public boolean canMove(int x, int y, int playersTurn)
     {
         return false;
     }

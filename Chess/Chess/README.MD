@@ -1,8 +1,6 @@
 # Chess
 
 ## TODO:
-- piece movements
-- player switching
 - check mate and check detection
 
 
@@ -10,3 +8,6 @@
 - built basic board
 - built pieces
 - built controller
+- piece movements
+- player switching
+- Border on the board

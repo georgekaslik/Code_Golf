@@ -11,12 +11,14 @@ public class Controler
     // instance variables - replace the example below with your own
     private int x;
     private Board board;
+    private int playersTurn;
     /**
      * Constructor for objects of class Controler
      */
     public Controler()
     { 
-        this.board = new Board(8,8);;
+        this.board = new Board(8,8);
+        this.playersTurn = 1;
     }
     
     public void run()
@@ -39,6 +41,14 @@ public class Controler
         // ask user for move e.g. xurrent xy -> new xy
         Scanner in = new Scanner(System.in);
         
+        if(playersTurn > 0)
+        {   
+            System.out.print("White ");
+        }
+        else 
+        {
+            System.out.print("Black ");
+        }
         System.out.print("Enter x,y to move: ");
         String s = in.nextLine(); // nextLine means enter
         if(s.equals('q'))
@@ -55,12 +65,19 @@ public class Controler
         stringSplit = s.split(",");
         int x = (stringSplit[0].charAt(0)) - 'A';
         int y = Integer.parseInt(stringSplit[1]) - 1;
-        System.out.println("You entered x=" + x + " y=" + y);
+        
+        if (xCurrent > 8 || xCurrent < 0 || 
+            yCurrent > 8 || yCurrent < 0 || 
+            x > 8 || x < 0 || y > 8 ||x < 0)
+        {
+            return;
+        }
         
         Piece piece = this.board.getPiece(xCurrent, yCurrent);
-        if(piece.canMove(x,y))
+        if(piece.canMove(x,y,playersTurn))
         {
-            this.board.movePiece(xCurrent, yCurrent ,x,y);       
+            this.board.movePiece(xCurrent, yCurrent ,x,y);  
+            playersTurn *= -1;
         }
     }
 }

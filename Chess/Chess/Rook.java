@@ -20,12 +20,16 @@ public class Rook extends Piece
             this.pieceIcon = 0x265C;
     }
 
-     @Override public boolean canMove(int x, int y)
+     @Override public boolean canMove(int x, int y, int playersTurn)
     {
         //can the piece move to x,y?
-        
-        if ((x == xPos && y >= 0 && y < 8) || (y == yPos && x >= 0 && x < 8)){
-            return true;
+        if((playersTurn > 0 && pieceValue > 0) || 
+            (playersTurn < 0 && pieceValue < 0))
+        {
+            if ((x == xPos && y >= 0 && y < 8) || 
+                (y == yPos && x >= 0 && x < 8)){
+                return true;
+            }
         }
         return false;
     }

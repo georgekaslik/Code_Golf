@@ -13,18 +13,21 @@ public class King extends Piece
             this.pieceIcon = 0x265A;
     }
 
-     @Override public boolean canMove(int x, int y)
+     @Override public boolean canMove(int x, int y, int playersTurn)
     {
         //can the piece move to x,y?
-        
-        if ((x == xPos && (y == yPos+1 || y == yPos-1)) || //up and down
-            (y == yPos && (x == xPos+1 || x == xPos-1)) || //left and right
-            (x == xPos+1 && y == yPos+1) || //top right
-            (x == xPos-1 && y == yPos+1) || //top left
-            (x == xPos-1 && y == yPos-1) || //bottom left
-            (x == xPos+1 && y == yPos-1) //bottom right
-            ){
-            return true;
+        if((playersTurn > 0 && pieceValue > 0) || 
+            (playersTurn < 0 && pieceValue < 0))
+        {
+            if ((x == xPos && (y == yPos+1 || y == yPos-1)) || //up and down
+                (y == yPos && (x == xPos+1 || x == xPos-1)) || //left and right
+                (x == xPos+1 && y == yPos+1) || //top right
+                (x == xPos-1 && y == yPos+1) || //top left
+                (x == xPos-1 && y == yPos-1) || //bottom left
+                (x == xPos+1 && y == yPos-1) //bottom right
+                ){
+                return true;
+            }
         }
         return false;
     }

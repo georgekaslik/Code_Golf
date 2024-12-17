@@ -20,20 +20,23 @@ public class Horses extends Piece
             this.pieceIcon = 0x265E;
     }
 
-     @Override public boolean canMove(int x, int y)
+     @Override public boolean canMove(int x, int y, int playersTurn)
     {
         //can the piece move to x,y?
-        
-        if ((x == xPos+1 && y == yPos+2) || // up 2 right 1
-            (x == xPos-1 && y == yPos+2) || //up 2 left 1
-            (x == xPos-1 && y == yPos-2) || //down 2 left 1
-            (x == xPos+1 && y == yPos-2) ||//downe 2 right 1
-            (x == xPos+2 && y == yPos+1) || //right 2 up 1
-            (x == xPos-2 && y == yPos+1) || //left 2 up 1
-            (x == xPos-2 && y == yPos-1) || //left 2 down 1
-            (x == xPos+2 && y == yPos-1) //right 2 down 1
-            ){
-            return true;
+        if((playersTurn > 0 && pieceValue > 0) || 
+            (playersTurn < 0 && pieceValue < 0))
+        {
+            if ((x == xPos+1 && y == yPos+2) || // up 2 right 1
+                (x == xPos-1 && y == yPos+2) || //up 2 left 1
+                (x == xPos-1 && y == yPos-2) || //down 2 left 1
+                (x == xPos+1 && y == yPos-2) ||//downe 2 right 1
+                (x == xPos+2 && y == yPos+1) || //right 2 up 1
+                (x == xPos-2 && y == yPos+1) || //left 2 up 1
+                (x == xPos-2 && y == yPos-1) || //left 2 down 1
+                (x == xPos+2 && y == yPos-1) //right 2 down 1
+                ){
+                return true;
+            }
         }
         return false;
     }
