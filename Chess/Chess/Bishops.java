@@ -13,8 +13,9 @@ public class Bishops extends Piece
             this.pieceIcon = 0x265D;
     }
 
-     @Override public boolean canMove(int x, int y, int playersTurn)
+     @Override public boolean canMove(int x, int y, int playersTurn, Board b)
     {
+        Piece nextPiece = b.getPiece(x, y);
         if((playersTurn > 0 && pieceValue > 0) || 
             (playersTurn < 0 && pieceValue < 0))
         {
@@ -28,4 +29,6 @@ public class Bishops extends Piece
         }
         return false;
     }
+    
+
 }

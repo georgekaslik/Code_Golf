@@ -38,31 +38,31 @@ public class Board
                 }
                 else if ((y == 0 && x == 0) || (y == 0 && x ==7)){
                     board[y][x] = new Rook(x,y, 5);
-                    //The last number is the value for the pawns
+                    //The last number is the value for the Rook
                 }
                 else if ((y == 7 && x == 0) || (y == 7 && x ==7)){
                     board[y][x] = new Rook(x,y, -5);
                 }
                 else if ((y == 0 && x == 1) || (y == 0 && x ==6)){
                     board[y][x] = new Horses(x,y, 3);
-                    //The last number is the value for the pawns
+                    //The last number is the value for the Horses
                 }
                 else if ((y == 7 && x == 1) || (y == 7 && x ==6)){
                     board[y][x] = new Horses(x,y, -3);
                 }
                 else if ((y == 0 && x == 2) || (y == 0 && x ==5)){
                     board[y][x] = new Bishops(x,y, 3);
-                    //The last number is the value for the pawns
+                    //The last number is the value for the Bishop
                 }
                 else if ((y == 7 && x == 2) || (y == 7 && x ==5)){
                     board[y][x] = new Bishops(x,y, -3);
                 }
                 else if (y == 0 && x == 4){
                     board[y][x] = new Queen(x,y, 9);
-                    //The last number is the value for the pawns
+                    //The last number is the value for the Queen
                 }
                 else if (y == 7 && x == 3){
-                    board[y][x] = new Queen(x,y, -3);
+                    board[y][x] = new Queen(x,y, -9);
                 }
                 
                 else if (y == 0 && x == 3){
@@ -70,7 +70,7 @@ public class Board
                     //The last number is the value for the pawns
                 }
                 else if (y == 7 && x == 4){
-                    board[y][x] = new King(x,y, -3);
+                    board[y][x] = new King(x,y, -9);
                 }
                 
                 else

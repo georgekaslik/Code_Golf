@@ -43,8 +43,12 @@ public class Piece
         yPos = y;
     }
     
-    public boolean canMove(int x, int y, int playersTurn)
+    public boolean canMove(int x, int y, int playersTurn, Board b)
     {
         return false;
+    }
+    
+    public boolean isCollision(int x, int y, Board b){
+        return true;
     }
 }

@@ -20,9 +20,9 @@ public class Horses extends Piece
             this.pieceIcon = 0x265E;
     }
 
-     @Override public boolean canMove(int x, int y, int playersTurn)
-    {
+     @Override public boolean canMove(int x, int y, int playersTurn, Board b){
         //can the piece move to x,y?
+        Piece nextPiece = b.getPiece(x, y);
         if((playersTurn > 0 && pieceValue > 0) || 
             (playersTurn < 0 && pieceValue < 0))
         {

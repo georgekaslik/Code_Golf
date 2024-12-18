@@ -74,7 +74,8 @@ public class Controler
         }
         
         Piece piece = this.board.getPiece(xCurrent, yCurrent);
-        if(piece.canMove(x,y,playersTurn))
+        
+        if(piece.canMove(x, y, playersTurn, board))
         {
             this.board.movePiece(xCurrent, yCurrent ,x,y);  
             playersTurn *= -1;
