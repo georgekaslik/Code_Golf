@@ -56,7 +56,7 @@ public class Controler
             System.exit(0);
         }
         String[] stringSplit = s.split(",");
-        int xCurrent = (stringSplit[0].charAt(0)) - 'A';//Integer.parseInt(stringSplit[0]);
+        int xCurrent = (stringSplit[0].charAt(0)) - 'A';
         int yCurrent = Integer.parseInt(stringSplit[1]) - 1;
         
         System.out.print("Enter x,y to move to: ");

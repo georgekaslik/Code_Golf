@@ -5,4 +5,6 @@ comment1.target=Bishops(int,\ int,\ int)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Bishops\n
 comment2.params=x\ y\ playersTurn\ b
 comment2.target=boolean\ canMove(int,\ int,\ int,\ Board)
-numComments=3
+comment3.params=x\ y\ b
+comment3.target=boolean\ isCollision(int,\ int,\ Board)
+numComments=4

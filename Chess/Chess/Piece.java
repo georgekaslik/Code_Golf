@@ -41,6 +41,7 @@ public class Piece
     {
         xPos = x;
         yPos = y;
+        System.out.println("piece moved: " + x + y);
     }
     
     public boolean canMove(int x, int y, int playersTurn, Board b)

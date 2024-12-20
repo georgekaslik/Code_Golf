@@ -16,6 +16,10 @@ public class Queen extends Piece
      @Override public boolean canMove(int x, int y, int playersTurn, Board b)
     {
         //can the piece move to x,y?
+         if(isCollision(x,y,b))
+        {
+            return false;
+        }
         Piece nextPiece = b.getPiece(x, y);
         if((playersTurn > 0 && pieceValue > 0) || 
             (playersTurn < 0 && pieceValue < 0))
@@ -34,6 +38,28 @@ public class Queen extends Piece
         
         }
         //response in boolean
+        return false;
+    }
+    
+    public boolean isCollision(int x, int y, Board b){
+        if (x == xPos){ 
+            int incDec = 1;
+            if(y < yPos){ incDec = -1;}
+            for (int ySearch = yPos; ySearch < y ; ySearch+=incDec){ 
+                if(b.getPiece(x, ySearch).getPieceValue() != 0){
+                    return true;
+                }
+            }
+        }
+        if (y == yPos){ 
+            int incDec = 1;
+            if(x < xPos){ incDec = -1;}
+            for (int xSearch = xPos; xSearch < x ; xSearch+=incDec){ 
+                if(b.getPiece(y, xSearch).getPieceValue() != 0){
+                return true;
+                }
+            }
+        }
         return false;
     }
 }

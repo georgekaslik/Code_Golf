@@ -24,12 +24,12 @@ public class Pawn extends Piece
 
     @Override public boolean canMove(int x, int y, int playersTurn, Board b)
     {
+        boolean returnVal = false;
         if(isCollision(x,y,b))
         {
-            return false;
+            return returnVal;
         }
         Piece nextPiece = b.getPiece(x, y);
-        boolean returnVal = false;
         if((playersTurn > 0 && pieceValue > 0) || (playersTurn < 0 && pieceValue < 0))
         {
             if(nextPiece.getPieceValue() != 0 && 
