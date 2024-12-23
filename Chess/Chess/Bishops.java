@@ -28,7 +28,7 @@ public class Bishops extends Piece
             int xDiff = (xPos - x);
             int yDiff = (yPos - y);
             if ((xDiff * xDiff) == (yDiff * yDiff)){
-                return true;
+                return canTake(x,y,b);
             }
         }
         return false;

@@ -35,7 +35,7 @@ public class Horses extends Piece
                 (x == xPos-2 && y == yPos-1) || //left 2 down 1
                 (x == xPos+2 && y == yPos-1) //right 2 down 1
                 ){
-                return true;
+                return canTake(x,y,b);
             }
         }
         return false;

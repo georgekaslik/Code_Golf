@@ -30,7 +30,7 @@ public class King extends Piece
                 (x == xPos-1 && y == yPos-1) || //bottom left
                 (x == xPos+1 && y == yPos-1) //bottom right
                 ){
-                return true;
+                return canTake(x,y,b);
             }
         }
         return false;
@@ -40,7 +40,7 @@ public class King extends Piece
         if (x == xPos){ 
             int incDec = 1;
             if(y < yPos){ incDec = -1;}
-            for (int ySearch = yPos; ySearch < y ; ySearch+=incDec){ 
+            for (int ySearch = yPos + incDec; ySearch > y ; ySearch+=incDec){ 
                 if(b.getPiece(x, ySearch).getPieceValue() != 0){
                     return true;
                 }
@@ -49,8 +49,8 @@ public class King extends Piece
         if (y == yPos){ 
             int incDec = 1;
             if(x < xPos){ incDec = -1;}
-            for (int xSearch = xPos; xSearch < x ; xSearch+=incDec){ 
-                if(b.getPiece(y, xSearch).getPieceValue() != 0){
+            for (int xSearch = xPos + incDec; xSearch > x ; xSearch+=incDec){ 
+                if(b.getPiece(xSearch, y).getPieceValue() != 0){
                     return true;
                 }
             }

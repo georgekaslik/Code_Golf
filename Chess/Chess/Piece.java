@@ -1,4 +1,3 @@
-
 /**
  * Write a description of interface Piece here.
  *
@@ -42,6 +41,18 @@ public class Piece
         xPos = x;
         yPos = y;
         System.out.println("piece moved: " + x + y);
+    }
+    
+    public boolean canTake(int x, int y, Board b){
+        boolean retVal = true;
+        if(b.getPiece(x, y).getPieceValue() == 0){
+            retVal = true;
+        }
+        else if ((getPieceValue() > 0 && b.getPiece(x, y).getPieceValue() > 0) || 
+            (getPieceValue() < 0 && b.getPiece(x, y).getPieceValue() < 0)){
+            retVal = false;
+        }
+        return retVal;
     }
     
     public boolean canMove(int x, int y, int playersTurn, Board b)

@@ -32,30 +32,36 @@ public class Pawn extends Piece
         Piece nextPiece = b.getPiece(x, y);
         if((playersTurn > 0 && pieceValue > 0) || (playersTurn < 0 && pieceValue < 0))
         {
-            if(nextPiece.getPieceValue() != 0 && 
-               ((nextPiece.getPieceValue() > 0 && pieceValue > 0) ||
-               (nextPiece.getPieceValue() < 0 && pieceValue < 0)))
-            if (firstMove && x == xPos && y == yPos+2)
-            {
-                returnVal = true;
+            int incDec = 1;
+            if(pieceValue < 0){ incDec = -1;}
+            if (firstMove && x == xPos && y == yPos+(2*incDec)){
+                returnVal = canTake(x,y,b);
             }
-            if (x == xPos && y == yPos+1){
-                returnVal = true;
+            if (x == xPos && y == yPos+incDec){
+                if(b.getPiece(x, y).getPieceValue() != 0){ 
+                    returnVal = false;
+                } else {
+                    returnVal = canTake(x,y,b);
+                }
             }
-            if (x == xPos && y == yPos-1){
-                returnVal = true;
+            else if ((x == xPos+1 || x == xPos-1) && y == yPos+incDec){
+                if((b.getPiece(x, y).getPieceValue() > 0 && pieceValue < 0)||
+                (b.getPiece(x, y).getPieceValue() < 0 && pieceValue > 0)){
+                    returnVal = true;
+                }
             }
+            
             firstMove = false;
         }
         //response in boolean
         return returnVal;
     }
-    
+
      public boolean isCollision(int x, int y, Board b){
-        if (x == xPos){ 
+        if (x == xPos){
             int incDec = 1;
             if(y < yPos){ incDec = -1;}
-            for (int ySearch = yPos; ySearch < y ; ySearch+=incDec){ 
+            for (int ySearch = yPos + incDec; ySearch < y ; ySearch+=incDec){
                 if(b.getPiece(x, ySearch).getPieceValue() != 0){
                     return true;
                 }

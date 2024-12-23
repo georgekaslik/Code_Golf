@@ -2,6 +2,8 @@
 
 ## TODO:
 - check mate and check detection
+- en-passant
+- castleing 
 
 
 # Done
@@ -11,3 +13,4 @@
 - piece movements
 - player switching
 - Border on the board
+- pawn not taking infront but can take diagonally

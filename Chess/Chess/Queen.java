@@ -29,11 +29,11 @@ public class Queen extends Piece
             if ((x == xPos && y >= 0 && y < 8) || 
                 (y == yPos && x >= 0 && x < 8) ||
                 (xDiff * xDiff) == (yDiff * yDiff)){
-                return true;
+                return canTake(x,y,b);
             }
         
             if (pieceValue == -1 && x == xPos && y == yPos-1){
-                return true;
+                return canTake(x,y,b);
             }
         
         }
@@ -45,7 +45,7 @@ public class Queen extends Piece
         if (x == xPos){ 
             int incDec = 1;
             if(y < yPos){ incDec = -1;}
-            for (int ySearch = yPos; ySearch < y ; ySearch+=incDec){ 
+            for (int ySearch = yPos + incDec; ySearch > y ; ySearch+=incDec){ 
                 if(b.getPiece(x, ySearch).getPieceValue() != 0){
                     return true;
                 }
@@ -54,7 +54,7 @@ public class Queen extends Piece
         if (y == yPos){ 
             int incDec = 1;
             if(x < xPos){ incDec = -1;}
-            for (int xSearch = xPos; xSearch < x ; xSearch+=incDec){ 
+            for (int xSearch = xPos + incDec; xSearch > x ; xSearch+=incDec){ 
                 if(b.getPiece(y, xSearch).getPieceValue() != 0){
                     return true;
                 }
