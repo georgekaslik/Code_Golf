@@ -7,7 +7,6 @@
  */
 public class Rook extends Piece
 {
-
     /**
      * Constructor for objects of class Rook
      */

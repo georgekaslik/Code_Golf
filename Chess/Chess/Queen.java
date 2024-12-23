@@ -56,10 +56,24 @@ public class Queen extends Piece
             if(x < xPos){ incDec = -1;}
             for (int xSearch = xPos; xSearch < x ; xSearch+=incDec){ 
                 if(b.getPiece(y, xSearch).getPieceValue() != 0){
-                return true;
+                    return true;
                 }
             }
         }
+        if ((x - xPos) == (y - yPos)) {
+            int xIncDec = (x > xPos ? 1 : -1);
+            int yIntDec = (y > yPos ? 1 : -1);
+            int xSearch = xPos;
+            int ySearch = yPos;
+            while (xSearch != x && ySearch != y) 
+            {
+                xSearch += xIncDec;
+                ySearch += yIntDec;
+                if (b.getPiece(xSearch, ySearch).getPieceValue() != 0) {
+                    return true;
+                }
+            }
+        }  
         return false;
     }
 }
