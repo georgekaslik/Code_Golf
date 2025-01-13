@@ -1,0 +1,4 @@
+/Users/georgekaslik/Github/CodeGolf/Chess/ChessC++/CMakeFiles/Chess_Board.dir
+/Users/georgekaslik/Github/CodeGolf/Chess/ChessC++/CMakeFiles/Chess_Game.dir
+/Users/georgekaslik/Github/CodeGolf/Chess/ChessC++/CMakeFiles/edit_cache.dir
+/Users/georgekaslik/Github/CodeGolf/Chess/ChessC++/CMakeFiles/rebuild_cache.dir
