@@ -7,3 +7,4 @@ Pawn::Pawn(int x, int y, int pieceValue) : Piece(x, y, pieceValue)
         else
             pieceIcon = 'p';//0x265F;
     }
+
